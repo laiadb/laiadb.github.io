@@ -1,0 +1,740 @@
+%% template.tex
+%% from
+%% bare_conf.tex
+%% V1.4b
+%% 2015/08/26
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
+%% conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE!
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. The IEEE's font choices and paper sizes can   ***
+% *** trigger bugs that do not appear when using other class files.       ***                          ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+\documentclass[conference,final,]{IEEEtran}
+% Some Computer Society conferences also require the compsoc mode option,
+% but others use the standard conference format.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/pkg/ifpdf
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of the IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off
+% such as if a citation ever needs to be enclosed in parenthesis.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 5.0 (2009-03-20) and later if using hyperref.sty.
+% The latest version can be obtained at:
+% http://www.ctan.org/pkg/cite
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at:
+% http://www.ctan.org/pkg/graphicx
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/pkg/epslatex
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics.
+%
+% Note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/amsmath
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as the IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/pkg/algorithms
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/pkg/algorithmicx
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/array
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\ifCLASSOPTIONcompsoc
+%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%\else
+%  \usepackage[caption=false,font=footnotesize]{subfig}
+%\fi
+% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
+% for subfigure.sty, the latter of which is no longer maintained and is
+% incompatible with some LaTeX packages including fixltx2e. However,
+% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
+% which will override IEEEtran.cls' handling of captions and this will result
+% in non-IEEE style figure/table captions. To prevent this problem, be sure
+% and invoke subfig.sty's "caption=false" package option (available since
+% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
+% handling of captions.
+% Note that the Computer Society format requires a larger sans serif font
+% than the serif footnote size font used in traditional IEEE formatting
+% and thus the need to invoke different subfig.sty package options depending
+% on whether compsoc mode has been enabled.
+%
+% The latest version and documentation of subfig.sty can be obtained at:
+% http://www.ctan.org/pkg/subfig
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure.
+% Be aware that LaTeX2e kernels dated 2015 and later have fixltx2e.sty's
+% corrections already built into the system in which case a warning will
+% be issued if an attempt is made to load fixltx2e.sty as it is no longer
+% needed.
+% The latest version and documentation can be found at:
+% http://www.ctan.org/pkg/fixltx2e
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/stfloats
+% Do not use the stfloats baselinefloat ability as the IEEE does not allow
+% \baselineskip to stretch. Authors submitting work to the IEEE should note
+% that the IEEE rarely uses double column equations and that authors should try
+% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
+% packages (also by Sigitas Tolusis) as the IEEE does not format its papers in
+% such ways.
+% Do not attempt to use stfloats with fixltx2e as they are incompatible.
+% Instead, use Morten Hogholm'a dblfloatfix which combines the features
+% of both fixltx2e and stfloats:
+%
+% \usepackage{dblfloatfix}
+% The latest version can be found at:
+% http://www.ctan.org/pkg/dblfloatfix
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/url
+% Basically, \url{my_url_here}.
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+
+%% BEGIN MY ADDITIONS %%
+
+
+\usepackage{graphicx}
+% We will generate all images so they have a width \maxwidth. This means
+% that they will get their normal width if they fit onto the page, but
+% are scaled down if they would overflow the margins.
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+\else\Gin@nat@width\fi}
+\makeatother
+\let\Oldincludegraphics\includegraphics
+\renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=\maxwidth]{#1}}
+
+\usepackage[unicode=true]{hyperref}
+
+\hypersetup{
+            pdftitle={The LAIA Database -- A Secure and Decentralized Platform for Environmental Data},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+
+% Pandoc toggle for numbering sections (defaults to be off)
+\setcounter{secnumdepth}{0}
+
+% Pandoc syntax highlighting
+
+% Pandoc header
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+%% END MY ADDITIONS %%
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+\begin{document}
+%
+% paper title
+% Titles are generally capitalized except for words such as a, an, and, as,
+% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+% not capitalized unless they are the first or last word of the title.
+% Linebreaks \\ can be used within to get better formatting as desired.
+% Do not put math or special symbols in the title.
+\title{The LAIA Database -- A Secure and Decentralized Platform for
+Environmental Data}
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+
+\author{
+
+%% ---- classic IEEETrans wide authors' list ----------------
+ % -- end affiliation.wide
+%% ----------------------------------------------------------
+
+
+
+%% ---- classic IEEETrans one column per institution --------
+ %% -- beg if/affiliation.institution-columnar
+\IEEEauthorblockN{
+ %% -- end for/affiliation.institution.author
+}
+\IEEEauthorblockA{Center for Social Ecology and Free Technology\\
+SEFT
+\\seft@riseup.net
+}
+ %% -- end for/affiliation.institution
+ %% -- end if/affiliation.institution-columnar
+%% ----------------------------------------------------------
+
+
+
+
+
+%% ---- one column per author, classic/default IEEETrans ----
+ %% -- end if/affiliation.institution-columnar
+%% ----------------------------------------------------------
+
+}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+%
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3},
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract
+\begin{abstract}
+The current centralized storage of data in private servers exposes the
+whole society to the threats of surveillance, censorship and malicious
+attacks coming from different sources. Under this context, the environmental
+and climate data are also a target of these threats, therefore a shift on
+the topology of data storage and sharing is needed. The present article
+proposes the LAIA Database, a decentralized and encrypted platform focused
+on environmental and climate data that provides a total control over the data
+by the users. LAIA is a friend-to-friend network (F2F), which only allows access
+to the data by trusted nodes on the network. The project aims to improve the
+research collaboration between groups as it allows to share important
+information between trusted parts, while it protects both research
+groups and their data against censorship, persecution and other forms of
+political retaliation.
+\end{abstract}
+
+% no keywords
+
+% use for special paper notices
+
+
+
+% make the title area
+\maketitle
+
+% no keywords
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+The concepts of privacy, anonymity and digital self-defense are not only
+restricted to activists and groups directly involved with digital rights
+and other political movements. Since the surveillance apparatuses of the
+state were revealed in detail by Edward Snowden, many social movements
+started to deal with technological devices in a different way. Back
+then, the massive storage of data in a centralized database under US
+jurisdiction came out to the public spot. The issue of mass surveillance
+not only affected citizens but also other nation-states depending on
+USA-based infrastructures, which eventually turned out into an
+international crisis (Sargsyan 2016).
+
+Recently there has been a rise of critical voices against investments in
+environmental and climate research programs. For some of them,
+environmental policies are seen as a threat to industries and the
+national economy, this is something on which many politician
+base their rhetoric (Trump, for instance, as a climate-change-denier
+based his campaign on this issue with the slogan ``make America great
+again''). Once in power conservative politicians supported by
+climate-change-deniers have moved from a mere rhetoric into
+political actions across the globe (De Pryck and Gemenne 2017). This new
+political scenario resulted in a strong reaction from researchers and
+activists that started to take some measures to protect the
+data from being altered, deleted or removed (an example of these
+measures was the mass-download of US government climate data before
+Donald Trump's administration took over). Nonetheless, what it is seen
+is a shift of data storage from US-based servers to servers under
+different jurisdiction, but owned by private groups and big corporations
+keeping high centralization of the knowledge on the Web in a few large
+providers (Halpin and Monnin 2016). Hence, although this action intends
+to rescue the data, its strategy is very ineffective as the political
+scenario is constantly changing in accordance with centralized interests.
+
+A more efficient and low cost way to protect the data is based on a real
+paradigmatic shift on data storage, from a centralized and vulnerable
+structure to a decentralized and serverless architecture. This is a path
+to recover the autonomy and control over environmental data by reducing
+the risks of data loss, the single point of failure and the exploitation
+of centralized data controlled by corporations and governments. This
+distributed structure is also social, where the autonomy is associated
+with the strength of the social bonds and the flux of information. Even 
+though there are already some decentralized projects available (e.g
+BitTorrent, git, etc), none of them was developed focusing on climate
+and environmental data.
+
+The current improvement of environmental data generation, from universities
+and research institutes to citizen scientific labs and collectives, contrasts
+with the lack of an integrated platform infrastructure for data publishing
+and the communication between different groups involved with the environmental
+monitoring is enhanced. Concerning to the limitations and vulnerabilities
+of the mainstream database structures, this project aims to develop an
+accessible and decentralized database based on trustworthy networks, privacy
+and anonymity. Under this structure a central service is not required and
+if a node is under attack, the other parts of the network can work without
+interruption.
+
+Serverless means that each node is server\&client at the same time,
+since no external service is needed for the network to work. Thus,
+it's based on the principle of a Network of Participation, which means
+that the data will never disappear as long as there is a network of
+nodes interested on keep it available in their computer. Moreover, with
+the multi-source sharing (swarming) and the multi-hop a small number of
+hops between nodes is expected to access files resulting in faster
+downloads (low latency).
+
+\hypertarget{the-database-architecture}{%
+\section{The Database Architecture}\label{the-database-architecture}}
+
+The LAIA Database is a cross-platform database focused on the user
+experience in order to build up a Web of Trust between peers. It
+integrates a strong encrypted protocol with usability and gives a total
+control over the data by users.
+In the decentralized structure of LAIA database the data is hosted in
+swarms, where a user who join the swarm become a peer and can download
+pieces of the data from other node since establish connection to at
+least one trusted peers in the swarm. In return, the user uploads
+pieces of data they already have other peers that need it. Once the user
+has all of the data, they can choose to stay in the swarm and
+continue sharing with other trusted peers, which makes them a seed.
+Accordingly, in this network of participation the structure the more
+popular the data the bigger the swarm and the faster the downloads.
+
+LAIA database a private peer-to-peer (P2P) in which each network node exchanges
+data only with a designated list of ``friend'' nodes. Also known as
+Friend-to-Friend (F2F), this network topology builds its overlay on top of
+pre-existent trust relationships among its users. A digital life
+is a dimension of real-life and this is a very important base of LAIA's
+principles, where only trusted nodes establish connection among them
+resulting in a more secure network. With F2F it is possible to ensure
+a cryptographically secure connection established between nodes that
+had met each other in a past experience outside the platform. Thus,
+unlike P2P network, with F2F it is possible to control who accesses
+each others data through encrypted connections between trusted parts
+that had already shared secrets needed to establish these secure connections.
+
+Related to the search for files, it is possible for nodes to look for
+files accessing a large network even when still only connected to their
+trusted nodes. The trusted node's search works by propagating search and
+file transfers recursively to all friends of friends to a certain degree
+of separation. This topology ends up with a non-homogeneous structure with
+regard to the amount of nodes and bandwidth (Fig. 1), where the
+swarming structure ensure either technical or legal means to overcome
+traditional ways for limiting the access to the Web (Fig. 2).
+
+The LAIA database uses the reputation scores to give a general overview
+of the peers' level of participation in the network. The role of this
+tool is to protect nodes against the problems of P2P network with spams
+and malicious nodes, preventing disturbing data spreading without
+control. Reputation score is accounted for each node considering the
+negative score as bad, the positive as good and the zero as neutral. If
+the score is too low, the identity is flagged as bad. During the
+bootstrapping process for joining the P2P network, peers can potentially
+use reputations to decide who to directly connect to in the overlay
+topology.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{network.png}
+\caption{Friend-to-Friend: The network of no-homogeneous networks. As
+the swarming is built up based on trust between nodes, the networks
+might vary in matter of bandwidth and size}
+\end{figure}
+
+
+\hypertarget{security-and-privacy}{%
+\subsection{Security and Privacy}\label{security-and-privacy}}
+
+The profile is created by the generation of a PGP key, where nodes
+use a passphrase to validate the profile. At the login, the PGP key
+is used to decrypt the encrypted SSL certificate and its passphrase is
+read. The SSL passphrase is chosen randomly when creating the location and
+encrypted using the users' PGP key.
+
+The data is identified by its specific fingerprint, and unlike other
+decentralized projects (e.g.~IPFS) it is also possible to look for files
+by their cryptographic hashes, names or even by their sizes. The
+security relies on cryptographic algorithms in which the connection
+between nodes are encrypted using SSL, while the identity of a node is
+represented by its PGP key. Once the software is installed and started
+for the first time, a profile and a certificate are automatically
+generated. That certificate, in turn, is used to authenticate and
+connect safely with the trusted node to include in the network.
+
+Once a folder is added to be shared, all the files present inside it
+will be hashed (i.e.~there will be created a fingerprint for each file)
+before being shared by the node. This folder can be shared as
+``browsable'', in which only trusted nodes can see and download the
+shared files, ``network wide'', where friends of friend can download the
+files via anonymous tunnels. In this case, the friends of friends nodes
+are not capable to see which files are being shared and the node that is
+the source of these files, but they can find the files using the search.
+
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{networkprivacy.png}
+\caption{Privacy and distribution of data throughout the network: Only
+trusted nodes (blue dots) can access the data from the source (green
+dots), while nodes ``friend-of-friend'' (red dots) can't see the data}
+\end{figure}
+
+
+\hypertarget{a-using-multiples-accounts-for-a-group}{%
+\subsubsection{a) Using Multiples Accounts For a
+Group}\label{a-using-multiples-accounts-for-a-group}}
+
+LAIA allows to use an existing PGP key for signing multiple identities,
+and thus makes a team work easy. As detailed before, the PGP keys will be
+used for encrypting the SSL passphrase on disk and to sign the
+location's SSL certificate.
+
+\hypertarget{b-files-hashing}{%
+\subsubsection{b) Files Hashing}\label{b-files-hashing}}
+
+LAIA stores files versioning them through the 40-character
+secure hash algorithm SHA-1. In 2017, some concerns came out since
+researchers had announced a hash collision of the SHA-1. A hash
+collision occurs when two separate inputs produce the same hash result
+output.
+
+Although a hash collision is unlikely to occur, there is an important
+difference between using cryptographic hash for secure signing, and
+using it for generating a file content identifier. In the case of a hash
+used for security it is used to trusting users in order to protect people
+using a given platform for malicious users. On the other hand, in
+content-addressable systems, like in LAIA, the hash for content
+identifier is not used to trusting users but, as previously said, for file
+content identification.
+
+\hypertarget{c-estabilishing-a-secure-connection}{%
+\subsubsection{c) Estabilishing a secure
+connection}\label{c-estabilishing-a-secure-connection}}
+
+LAIA's privacy is protected with anonymous tunnels. The swarms often
+consist of computers distributed around the world (in which national
+laws cannot actually achieve the censorship), and its structure is
+independent from a centralized server controlled by corporations or
+nation-states. Thus, there is no single entity to sue or pressure
+financially, and the data sharing overcomes the infrastructure
+jurisdiction and implication in giving users' data to intelligence
+agencies.
+
+The secure connection of two nodes is done using the PGP signature that
+authenticates SSL links between them and only the trusted nodes can
+access details like each other's IP addresses, which files are being
+shared, etc. One way to improve the privacy and anonymity is using
+the Retro-Tor tool that make it possible to run LAIA over the Tor
+network, where IP is not visible even to connected nodes. An advantage
+for users is that it creates a hidden node with one click away that
+enhances the secure data sharing, and overcomes digital embargo or
+censorship. This is an important tool for activities that require a
+secure and private contact with a trusted persons.
+
+\hypertarget{conclusion}{%
+\section{Conclusion}\label{conclusion}}
+
+The LAIA database proposes a new, efficient, strong and secure
+alternative to the centralized structure of environmental data
+storage with many advantages comparing to both centralized and
+decentralized platforms. The motivations of the project, based on
+autonomy, social participation, and freedom of speech are aligned
+with the essential principles for the improvement of researches
+and the social role of science.
+
+The reputation system, as already pointed out by other projects, is an
+effective system of self-management, since the majority of the nodes in
+the networks are interested to maintain the system stable and free from
+trolls and distractions. Furthermore, it is faster, safer and ensures
+that the data will never disappear as there is at least one node hosting
+it. The data are private until a node allows a trusted one to access to
+its data. It is also easier to overcome the problem with human friendly
+names for files and enhances privacy using the Tor network.
+
+The F2F network used by the project is a very strong concept which
+allows private sharing of data, and protects other users hosting
+data or accessing it. Thus, in LAIA Database the control of access
+to the file is not used to restrict the access of information, but
+to ensure that researchers groups, collectives connected to the network,
+as well as the knowledge itself are safe. It allows data sharing between
+trusted nodes by using a free and open source network with high
+scalability gathering universities, citizen scientists and stakeholders
+promoting their participation and cooperation in the network.
+
+\newpage
+
+\hypertarget{references}{%
+\section*{References}\label{references}}
+\addcontentsline{toc}{section}{References}
+
+\hypertarget{refs}{}
+\leavevmode\hypertarget{ref-de_pryck_denier_2017}{}%
+De Pryck, Kari, and François Gemenne. 2017. ``The Denier-in-Chief:
+Climate Change, Science and the Election of Donald J. Trump.'' \emph{Law
+and Critique} 28 (2): 119--26.
+\url{https://doi.org/10.1007/s10978-017-9207-6}.
+
+\leavevmode\hypertarget{ref-halpin_decentralization_2016}{}%
+Halpin, Harry, and Alexandre Monnin. 2016. ``The Decentralization of
+Knowledge: How Carnap and Heidegger Influenced the Web.'' \emph{First
+Monday} 21 (12). \url{https://doi.org/10.5210/fm.v21i12.7109}.
+
+\leavevmode\hypertarget{ref-sargsyan_data_2016}{}%
+Sargsyan, Tatevik. 2016. ``Data Localization and the Role of
+Infrastructure for Surveillance, Privacy, and Security.''
+\emph{International Journal of Communication} 10 (0): 17.
+\url{https://ijoc.org/index.php/ijoc/article/view/3854}.
+
+\end{document}
+
+
