@@ -78,3 +78,16 @@ h3 {
         background-attachment: scroll;
     }
 }
+
+/* Change Font Resolutions */
+@media all and (max-width: 1200px) and (min-width: 800px) {
+    p {
+        font-size: 12px;
+    }
+}
+
+@media all and (max-width: 1200px) and (min-width: 800px) {
+    a   {
+        font-size: 30px;
+  }
+}
